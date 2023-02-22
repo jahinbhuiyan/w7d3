@@ -42,4 +42,10 @@ class User < ApplicationRecord
         self.save!
         self.session_token
     end
+
+    has_many(
+        :goals,
+        class_name: :Goal,
+        foreign_key: :user_id
+    )
 end
